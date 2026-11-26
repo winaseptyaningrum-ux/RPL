@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Blood Emergency</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="mobile-frame">
+    <!-- Toast / Alert Error -->
+    <div id="alert-box" class="alert-box hidden"></div>
+
+    <!-- =========================================================
+         HALAMAN 01: LOGIN & DAFTAR
+    ========================================================== -->
+    <section id="page-login" class="screen">
+      <header class="login-header">
+        <h1>Campus Blood Emergency</h1>
+      </header>
+
+      <div class="login-body">
+        <h2 id="auth-title" class="auth-title">Masuk dengan Email kampus</h2>
+
+        <form id="auth-form" class="auth-form">
+          <div class="input-group">
+            <span class="input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6488B5" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </span>
+            <input type="email" id="email_kampus" placeholder="nama@kampus.ac.id" required />
+          </div>
+
+          <div class="input-group">
+            <span class="input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6488B5" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </span>
+            <input type="password" id="password" placeholder="Password" required />
+          </div>
+
+          <button type="submit" id="auth-submit-btn" class="btn-primary-red">Masuk</button>
+        </form>
+
+        <p class="auth-switch">
+          <span id="auth-switch-text">Belum punya akun?</span>
+          <a href="#" id="auth-switch-link">Daftar di sini</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HALAMAN 02: LENGKAPI PROFIL PENDONOR
+    ========================================================== -->
+    <section id="page-profil" class="screen hidden">
+      <div class="screen-content">
+        <h2 class="page-heading-center">Lengkapi Profil Pendonor</h2>
+
+        <form id="profil-form">
+          <div class="section-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Identitas</span>
+          </div>
+
+          <div class="input-group">
+            <span class="input-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.8">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </span>
+            <input type="text" id="nama_lengkap" placeholder="Nama Lengkap" required />
+          </div>
+
+          <div class="input-group">
+            <span class="input-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <line x1="7" y1="9" x2="17" y2="9" />
+                <line x1="7" y1="13" x2="13" y2="13" />
+              </svg>
+            </span>
+            <input type="text" id="nim_id_civitas" placeholder="NIM / ID Civitas" required />
+          </div>
+
+          <div class="input-group">
+            <span class="input-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.8">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </span>
+            <input type="tel" id="no_telepon" placeholder="Nomor Telepon" required />
+          </div>
+
+          <div class="input-group">
+            <span class="input-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.8">
+                <path d="M3 21h18" />
+                <path d="M5 21V7l8-4v18" />
+                <path d="M19 21V11l-6-4" />
+              </svg>
+            </span>
+            <input type="text" id="fakultas_unit" placeholder="Fakultas / Unit" required />
+          </div>
+
+          <div class="section-label mt-16">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#DC2626">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+            </svg>
+            <span>Golongan Darah</span>
+          </div>
+
+          <div class="blood-chips" id="blood-chips">
+            <button type="button" class="chip active" data-value="A">A</button>
+            <button type="button" class="chip" data-value="B">B</button>
+            <button type="button" class="chip" data-value="AB">AB</button>
+            <button type="button" class="chip" data-value="O">O</button>
+            <button type="button" class="chip" data-value="Belum Tahu">Belum Tahu</button>
+          </div>
+          <input type="hidden" id="golongan_darah" value="A" />
+
+          <div class="toggle-row">
+            <label class="switch">
+              <input type="checkbox" id="bersedia_donor" checked />
+              <span class="slider"></span>
+            </label>
+            <span class="toggle-text">Saya bersedia menjadi pendonor darah</span>
+          </div>
+
+          <button type="submit" class="btn-primary-red mt-24">Simpan Profil Pendonor</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HALAMAN 03: BERANDA & TAB NAVIGASI
+    ========================================================== -->
+    <section id="page-beranda" class="screen hidden">
+      <div class="screen-content has-bottom-nav">
+        <!-- Banner Sukses Hijau -->
+        <div id="success-banner" class="success-banner hidden">
+          <span class="check-icon">✓</span>
+          <span id="success-banner-text">Profil pendonor berhasil disimpan</span>
+        </div>
+
+        <!-- Tab Konten: Beranda -->
+        <div id="tab-beranda" class="tab-view">
+          <div class="greeting-box">
+            <h2 id="greeting-name">Halo, Pendonor!</h2>
+            <p>Terima kasih sudah siap berbagi kehidupan.</p>
+          </div>
+
+          <!-- Kartu Banner Merah -->
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <div>
+                <h3>Setetes darah,<br />besar artinya.</h3>
+                <p>Temukan jadwal donor dan mulai langkah pertamamu.</p>
+              </div>
+              <div class="blood-drop-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#DC2626">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                </svg>
+              </div>
+            </div>
+            <button type="button" class="btn-hero-cta" onclick="switchTab('jadwal')">
+              <span>Cari Jadwal Donor</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <!-- Kartu Status Profil Pendonor -->
+          <div class="section-block">
+            <h4 class="block-title">Profil pendonor</h4>
+            <div class="info-card clickable" id="btn-edit-profil">
+              <div class="card-icon-circle green-soft">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div class="card-body">
+                <strong>Profil sudah lengkap</strong>
+                <p>Kelola identitas dan golongan darah</p>
+                <span class="link-red">Lihat profil</span>
+              </div>
+              <span class="chevron">›</span>
+            </div>
+          </div>
+
+          <!-- Kartu Jadwal Donormu -->
+          <div class="section-block">
+            <h4 class="block-title">Jadwal donormu</h4>
+            <div class="info-card">
+              <div class="card-icon-square gray-soft">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </div>
+              <div class="card-body">
+                <strong>Belum ada jadwal donor</strong>
+                <p>Jadwal yang kamu pilih akan tampil di sini.</p>
+                <a href="#" class="link-red" onclick="switchTab('jadwal'); return false;">Temukan jadwal</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu Pertama Kali Donor -->
+          <div class="info-card clickable mt-12" onclick="alert('Panduan Donor: Pastikan tidur cukup minimal 5 jam, sudah makan sebelum donor, dan membawa kartu identitas civitas.')">
+            <div class="card-icon-circle red-soft">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <strong>Pertama kali donor?</strong>
+              <p>Baca panduan persiapan donor</p>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+        </div>
+
+        <!-- Tab Konten: Jadwal -->
+        <div id="tab-jadwal" class="tab-view hidden">
+          <h2 class="tab-title">Jadwal Donor Kampus</h2>
+          <p class="tab-subtitle">Pilih lokasi dan waktu kegiatan donor darah terdekat.</p>
+          <div class="info-card mt-16">
+            <div class="card-body">
+              <strong>Aula Utama Rektorat</strong>
+              <p>Kamis, 3 Desember 2026 • 09.00 - 14.00 WIB</p>
+              <span class="link-red">Kuota Tersedia (PMI Kota)</span>
+            </div>
+          </div>
+          <div class="info-card mt-12">
+            <div class="card-body">
+              <strong>Gedung Student Center Lt. 1</strong>
+              <p>Senin, 14 Desember 2026 • 08.30 - 13.00 WIB</p>
+              <span class="link-red">Kuota Tersedia (KSR Kampus)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Konten: Riwayat -->
+        <div id="tab-riwayat" class="tab-view hidden">
+          <h2 class="tab-title">Riwayat Donor</h2>
+          <p class="tab-subtitle">Catatan partisipasi donor darahmu akan muncul di sini.</p>
+          <div class="info-card mt-16">
+            <div class="card-body">
+              <strong>Belum ada riwayat donor</strong>
+              <p>Kamu belum pernah melakukan donor darah melalui aplikasi ini.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Konten: Profil & Logout -->
+        <div id="tab-profil" class="tab-view hidden">
+          <h2 class="tab-title">Profil Saya</h2>
+          <div class="info-card mt-16">
+            <div class="card-body" id="profile-summary-box">
+              <!-- Diisi dinamis oleh JS -->
+            </div>
+          </div>
+          <button type="button" id="btn-ubah-profil-tab" class="btn-outline-blue mt-16">Edit Profil Pendonor</button>
+          <button type="button" id="btn-logout" class="btn-primary-red mt-12">Keluar (Logout)</button>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation Bar -->
+      <nav class="bottom-nav">
+        <button type="button" class="nav-item active" data-tab="beranda">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+          <span>Beranda</span>
+        </button>
+        <button type="button" class="nav-item" data-tab="jadwal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <span>Jadwal</span>
+        </button>
+        <button type="button" class="nav-item" data-tab="riwayat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span>Riwayat</span>
+        </button>
+        <button type="button" class="nav-item" data-tab="profil">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <span>Profil</span>
+        </button>
+      </nav>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

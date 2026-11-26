@@ -1,0 +1,494 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  body {
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .mobile-frame {
+    width: 100%;
+    max-width: 412px;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  /* Alert Box */
+  .alert-box {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 380px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 999;
+    text-align: center;
+  }
+  
+  /* =========================================================
+     01 LOGIN / DAFTAR
+  ========================================================= */
+  #page-login {
+    background-color: #ffffff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-header {
+    background-color: #5b9bd5;
+    padding: 26px 20px;
+    text-align: center;
+  }
+  
+  .login-header h1 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+  
+  .login-body {
+    padding: 40px 24px;
+    flex: 1;
+  }
+  
+  .auth-title {
+    color: #1f5c99;
+    font-size: 19px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 0 14px;
+    height: 46px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  
+  .input-group:focus-within {
+    border-color: #2563eb;
+  }
+  
+  .input-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #1e293b;
+  }
+  
+  .input-group input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .btn-primary-red {
+    width: 100%;
+    height: 46px;
+    background-color: #d92d20;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-primary-red:hover {
+    background-color: #b42318;
+  }
+  
+  .btn-outline-blue {
+    width: 100%;
+    height: 44px;
+    background-color: #ffffff;
+    color: #1f5c99;
+    border: 1.5px solid #1f5c99;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .auth-switch {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13.5px;
+    color: #475569;
+  }
+  
+  .auth-switch a {
+    color: #1f5c99;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+  }
+  
+  /* =========================================================
+     02 LENGKAPI PROFIL PENDONOR
+  ========================================================= */
+  #page-profil {
+    background-color: #ffffff;
+    flex: 1;
+  }
+  
+  .screen-content {
+    padding: 28px 22px;
+    flex: 1;
+  }
+  
+  .has-bottom-nav {
+    padding-bottom: 86px;
+  }
+  
+  .page-heading-center {
+    font-size: 19px;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
+  }
+  
+  .mt-12 { margin-top: 12px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  
+  .blood-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .chip {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1.5px solid #cbd5e1;
+    background-color: #ffffff;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .chip.active {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    color: #ffffff;
+  }
+  
+  /* Toggle Switch */
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  
+  .toggle-text {
+    font-size: 13.5px;
+    color: #1e293b;
+    font-weight: 500;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #cbd5e1;
+    transition: 0.3s;
+    border-radius: 24px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #1d4ed8;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+  
+  /* =========================================================
+     03 BERANDA
+  ========================================================= */
+  .success-banner {
+    background-color: #eaf6ed;
+    border: 1px solid #ccebd4;
+    color: #256e3a;
+    padding: 12px 14px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  
+  .check-icon {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  .greeting-box h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  
+  .greeting-box p {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 4px;
+    margin-bottom: 18px;
+  }
+  
+  /* Hero Card */
+  .hero-card {
+    background: linear-gradient(135deg, #fff5f5 0%, #fee2e2 100%);
+    border: 1px solid #fecaca;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .hero-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.25;
+  }
+  
+  .hero-card p {
+    font-size: 12.5px;
+    color: #475569;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  
+  .blood-drop-icon {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px;
+    border-radius: 50%;
+  }
+  
+  .btn-hero-cta {
+    width: 100%;
+    margin-top: 16px;
+    background-color: #d92d20;
+    color: #ffffff;
+    border: none;
+    border-radius: 22px;
+    padding: 11px 18px;
+    font-size: 13.5px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* Info Cards */
+  .section-block {
+    margin-bottom: 18px;
+  }
+  
+  .block-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+  
+  .info-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  
+  .info-card.clickable {
+    cursor: pointer;
+  }
+  
+  .card-icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .card-icon-square {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .green-soft { background-color: #dcfce7; }
+  .gray-soft { background-color: #f1f5f9; }
+  .red-soft { background-color: #fee2e2; }
+  
+  .card-body {
+    flex: 1;
+  }
+  
+  .card-body strong {
+    display: block;
+    font-size: 13.5px;
+    color: #0f172a;
+  }
+  
+  .card-body p {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 2px;
+  }
+  
+  .link-red {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #d92d20;
+    text-decoration: none;
+  }
+  
+  .chevron {
+    font-size: 20px;
+    color: #94a3b8;
+  }
+  
+  .tab-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  
+  .tab-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 4px;
+  }
+  
+  /* Bottom Navigation */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 412px;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0 10px;
+    z-index: 50;
+  }
+  
+  .nav-item {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .nav-item.active {
+    color: #d92d20;
+    font-weight: 600;
+  }
